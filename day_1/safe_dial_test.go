@@ -1,13 +1,14 @@
 package day_1
 
 import (
+	"aoc-2025-go/utils"
 	"log"
 	"testing"
 )
 
 func TestSafeDialZeroHits(t *testing.T) {
 	dial := NewSafeDial()
-	seq, err := ReadRotationSequence(getTestDataPath("input.txt"))
+	seq, err := ReadRotationSequence(utils.GetTestDataPath("input.txt"))
 
 	if err != nil {
 		log.Fatal(err)
@@ -24,7 +25,7 @@ func TestSafeDialZeroHits(t *testing.T) {
 
 func TestSafeDialZeroHitsAndPasses(t *testing.T) {
 	dial := NewSafeDial()
-	seq, err := ReadRotationSequence(getTestDataPath("input.txt"))
+	seq, err := ReadRotationSequence(utils.GetTestDataPath("input.txt"))
 
 	if err != nil {
 		log.Fatal(err)

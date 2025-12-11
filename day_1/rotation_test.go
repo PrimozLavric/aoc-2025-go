@@ -1,17 +1,10 @@
 package day_1
 
 import (
-	"path/filepath"
-	"runtime"
+	"aoc-2025-go/utils"
 	"slices"
 	"testing"
 )
-
-func getTestDataPath(relativePath string) string {
-	_, filename, _, _ := runtime.Caller(1)
-	dir := filepath.Dir(filename)
-	return filepath.Join(dir, "testdata", relativePath)
-}
 
 func TestParsing(t *testing.T) {
 	expectedSeq := []Rotation{
@@ -26,7 +19,7 @@ func TestParsing(t *testing.T) {
 		{DirRight, 14},
 		{DirLeft, 82},
 	}
-	seq, err := ReadRotationSequence(getTestDataPath("small_example.txt"))
+	seq, err := ReadRotationSequence(utils.GetTestDataPath("small_example.txt"))
 
 	if err != nil {
 		t.Fail()
